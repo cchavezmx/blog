@@ -1,25 +1,22 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 
-const phone = "5215546371510"
-const whatsappMessage = `https://api.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
+const phone = '5215546371510'
+const whatsappMessage = `https://Linkpi.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
 
-export default function Home() {
-  
-  const [ imgUrl, setImgUrl ] = useState([])
-  const [ load, setLoad ] = useState(false)
+export default function Home () {
+  const [imgUrl, setImgUrl] = useState([])
+  const [load, setLoad] = useState(false)
 
   useEffect(() => {
-
-    fetch("/api/images")
-    .then(res => res.json())
-    .then(data => setImgUrl(data))
-    .catch(err => console.log(err))
-    .finally(() => setLoad(true))
-
-  },[])
-
+    fetch('/Linkpi/images')
+      .then(res => res.json())
+      .then(data => setImgUrl(data))
+      .catch(err => console.log(err))
+      .finally(() => setLoad(true))
+  }, [])
 
   return (
     <div lang="es_MX" className="styles">
@@ -43,21 +40,21 @@ export default function Home() {
 
         <nav className="navflex">
           <span className="nav--logo">
-            <a href="/" className="logo">
-              <Image width="100%" height="100%" src="/logo/web-logo.webp" alt="logo grupo intecsa" />
-            </a>
+            <Link href="/">
+              <Image width="65" height="70" src="/logo/web-logo.webp" alt="logo grupo intecsa"/>
+            </Link>
           </span>
 
-          <a href="#" className="hamburger">
+          <button className="hamburger">
             <span></span>
             <span></span>
             <span></span>
-          </a>
+          </button>
 
           <div className="nav--links">
-            <a href="#">Nuestra Empresa</a>
-            <a href="#">Tienda</a>
-            <a href="#contacto">Contacto</a>
+            <Link href="/about">Nuestra Empresa</Link>
+            <Link href="www.itamx.com">Tienda</Link>
+            <Link href="/contacto">Contacto</Link>
           </div>
 
         </nav>
@@ -123,16 +120,15 @@ export default function Home() {
       <section className="socios">
           <h2>Nuestros Socios Comerciales</h2>
       <section className="socios-a">
-          {  load && Object.values(imgUrl).map(img => {
-              return img.map(item => <Image width="100%" height="100%" src={`/socios/${item}`} />)
+          { load && Object.values(imgUrl).map((img, index) => {
+            return img.map(item => <Image key={index} width="100%" height="100%" src={`/socios/${item}`} />)
           })}
       </section>
       </section>
 
-
       <section className="entradas--blog">
         <h2>Ultimos temas del Blog</h2>
-          
+
           <div className="blog--entries">
 
           <div>
@@ -140,13 +136,13 @@ export default function Home() {
             <h3>Titulo 1 blog</h3>
             <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
           </div>
-          
+
           <div>
             <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
             <h3>Titulo 2 blog</h3>
             <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
           </div>
-          
+
           <div>
             <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
             <h3>Titulo 3 blog</h3>
@@ -158,69 +154,68 @@ export default function Home() {
 
       <section id="contacto" className="footer">
           <h2>Información de Contacto</h2>
-          
+
       <div className="footer--cotainer">
           <div className="redes">
-            <a href={whatsappMessage}
+            {/* <button onClick={whatsappMessage}
             target="_blank"
-            rel="noopener follow"
+            rel="noopener follow noreferrer"
             aria-label="Mandanos un whatsapp"
             >
             <Image width="100%" height="100%" src="/social/whatsapp.svg" className="imgnav" alt="Síguenos en Facebook"/>
-            </a>
+            </button> */}
 
-            <a href="https://www.facebook.com/Grupo-Intecsa-Mx-Oficial-213945636173987/"
+            <Link href="https://www.facebook.com/Grupo-Intecsa-Mx-Oficial-213945636173987/"
             target="_blank"
-            rel="noopener follow"
+            rel="noopener follow noreferrer"
             aria-label="Sígenos en facebook"
             >
             <Image width="100%" height="100%" src="/social/facebook.svg" className="imgnav" alt="Síguenos en Facebook"/>
-            </a>
+            </Link>
 
-
-            <a href="https://www.instagram.com/grupointecsamx/?hl=es-la"
+            <Link href="https://www.instagram.com/grupointecsamx/?hl=es-la"
             target="_blank"
-            rel="noopener follow"
+            rel="noopener follow noreferrer"
             aria-label="Sígenos en instagram"
             >
-            <Image width="100%" height="100%" src="/social/insta.svg" className="hidden" alt="Síguenos en Instragram"  />
-            </a>
+            <Image width="100%" height="100%" src="/social/insta.svg" className="hidden" alt="Síguenos en Instragram" />
+            </Link>
 
-            <a href="https://www.linkedin.com/company/grupo-intecsa/about/"
+            <Link href="https://www.linkedin.com/company/grupo-intecsa/Linkbout/"
             target="_blank"
-            rel="noopener follow"
+            rel="noopener follow noreferrer"
             aria-label="Nuestra empresa en linkedin"
             >
-            <Image width="100%" height="100%" src="/social/linkedin.svg" className="hidden" alt="Síguenos en Linkedin"  />
-            </a>
+            <Image width="100%" height="100%" src="/social/linkedin.svg" className="hidden" alt="Síguenos en Linkedin" />
+            </Link>
 
-            <a href="https://www.youtube.com/channel/UCLglnunszAKCtMYLaNDBpUw/featured"
+            <Link href="https://www.youtube.com/channel/UCLglnunszAKCtMYLaNDBpUw/featured"
             target="_blank"
-            rel="noopener follow"
+            rel="noopener follow noreferrer"
             aria-label="Cómo llegar"
             >
             <Image width="100%" height="100%" src="/social/youtube.svg" className="imgnav" alt="Síguenos en Youtube" />
-            </a>
+            </Link>
 
             <div className="visitanos">
               <h5>Visitanos</h5>
-              <iframe title="myMapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5322.527002406184!2d-99.22696839255828!3d19.38668419189787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201adefab9513%3A0xa5936acc13a69c0d!2sRa%C3%BAl%20Z%C3%A1rate%20Machuca%2011%2C%20Cuevitas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001220%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1613650539398!5m2!1ses!2smx" frameBorder="0" style={{ "border": "0" }} allowFullScreen="" aria-hidden="false" tabIndex="0" width="400px" height="200px"  ></iframe>
-            </div> 
+              <iframe title="myMapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5322.527002406184!2d-99.22696839255828!3d19.38668419189787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201adefab9513%3A0xa5936acc13a69c0d!2sRa%C3%BAl%20Z%C3%A1rate%20Machuca%2011%2C%20Cuevitas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001220%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1613650539398!5m2!1ses!2smx" frameBorder="0" style={{ border: '0' }} allowFullScreen="" aria-hidden="false" tabIndex="0" width="400px" height="200px" ></iframe>
+            </div>
 
             </div>
 
           <div className="address">
             <span><h5>Dirección</h5><p>Raúl Zárate Machuca Cuevítas #11, 01220 Ciudad de México, CDMX</p></span>
             <span><h5>Nuestros horarios</h5><p>Lunes / Viernes 09:00 - 18:00</p></span>
-            <span><h5>Correo:</h5><a href="mailto:contacto@grupointecsa.com" >contacto@grupointecsa.com</a></span>
-                
+            <span><h5>Correo:</h5><Link href="mailto:contacto@grupointecsa.com" >contacto@grupointecsa.com</Link></span>
+
           </div>
 
       </div>
         <div className="visitanos-small">
             <h5>Visitanos</h5>
-            <iframe title="myMapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5322.527002406184!2d-99.22696839255828!3d19.38668419189787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201adefab9513%3A0xa5936acc13a69c0d!2sRa%C3%BAl%20Z%C3%A1rate%20Machuca%2011%2C%20Cuevitas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001220%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1613650539398!5m2!1ses!2smx" frameBorder="0" style={{ "border": "0" }} allowFullScreen="" aria-hidden="false" tabIndex="0" width="100%" height="280px"  ></iframe>
-          </div> 
+            <iframe title="myMapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5322.527002406184!2d-99.22696839255828!3d19.38668419189787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201adefab9513%3A0xa5936acc13a69c0d!2sRa%C3%BAl%20Z%C3%A1rate%20Machuca%2011%2C%20Cuevitas%2C%20%C3%81lvaro%20Obreg%C3%B3n%2C%2001220%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1613650539398!5m2!1ses!2smx" frameBorder="0" style={{ border: '0' }} allowFullScreen="" aria-hidden="false" tabIndex="0" width="100%" height="280px" ></iframe>
+          </div>
       </section>
 
       </main>
