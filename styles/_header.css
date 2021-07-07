@@ -12,9 +12,8 @@
 }
 
 .logo img{
-  padding: 0.625rem;
-  width: 80px;
-  height: 80px;
+  width: 4rem;
+  height: 4rem;
   object-fit: scale-down;
   
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const phone = "5215546371510"
 const whatsappMessage = `https://api.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
@@ -43,7 +44,7 @@ export default function Home() {
         <nav className="navflex">
           <span className="nav--logo">
             <a href="/" className="logo">
-              <img src="/logo/web-logo.webp" alt="logo grupo intecsa" />
+              <Image width="100%" height="100%" src="/logo/web-logo.webp" alt="logo grupo intecsa" />
             </a>
           </span>
 
@@ -69,7 +70,7 @@ export default function Home() {
           </div>
 
           <div className="marco--img">
-            <img src="/bg/git-big-wb.webp" alt="logo de la empresa Grupo Intesca en un foto"/>
+            <Image width="100%" height="100%" src="/bg/git-big-wb.webp" alt="logo de la empresa Grupo Intesca en un foto"/>
           {/* <video muted="true" loop="true" autoPlay="true" className="marco--img" style={{ width: "100%", height: "100%"}}>
             <source src="/video/videoModal.m4v" type="video/x-m4v"/>
           </video> */}
@@ -88,7 +89,7 @@ export default function Home() {
             </div>
             <div>
                 <h3 className="text-black">Catálogo Virtual</h3>
-                <img src="" />
+                {/* <Image width={100} height={100} src="" /> */}
                 <p>Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.</p>
             </div>
           </div>
@@ -123,7 +124,7 @@ export default function Home() {
           <h2>Nuestros Socios Comerciales</h2>
       <section className="socios-a">
           {  load && Object.values(imgUrl).map(img => {
-              return img.map(item => <img src={`/socios/${item}`} />)
+              return img.map(item => <Image width="100%" height="100%" src={`/socios/${item}`} />)
           })}
       </section>
       </section>
@@ -135,19 +136,19 @@ export default function Home() {
           <div className="blog--entries">
 
           <div>
-            <img src="/blog/foto_blog.jpg" />
+            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
             <h3>Titulo 1 blog</h3>
             <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
           </div>
           
           <div>
-            <img src="/blog/foto_blog.jpg" />
+            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
             <h3>Titulo 2 blog</h3>
             <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
           </div>
           
           <div>
-            <img src="/blog/foto_blog.jpg" />
+            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
             <h3>Titulo 3 blog</h3>
             <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
           </div>
@@ -165,7 +166,7 @@ export default function Home() {
             rel="noopener follow"
             aria-label="Mandanos un whatsapp"
             >
-            <img src="/social/whatsapp.svg" className="imgnav" alt="Síguenos en Facebook"/>
+            <Image width="100%" height="100%" src="/social/whatsapp.svg" className="imgnav" alt="Síguenos en Facebook"/>
             </a>
 
             <a href="https://www.facebook.com/Grupo-Intecsa-Mx-Oficial-213945636173987/"
@@ -173,7 +174,7 @@ export default function Home() {
             rel="noopener follow"
             aria-label="Sígenos en facebook"
             >
-            <img src="/social/facebook.svg" className="imgnav" alt="Síguenos en Facebook"/>
+            <Image width="100%" height="100%" src="/social/facebook.svg" className="imgnav" alt="Síguenos en Facebook"/>
             </a>
 
 
@@ -182,7 +183,7 @@ export default function Home() {
             rel="noopener follow"
             aria-label="Sígenos en instagram"
             >
-            <img src="/social/insta.svg" className="hidden" alt="Síguenos en Instragram"  />
+            <Image width="100%" height="100%" src="/social/insta.svg" className="hidden" alt="Síguenos en Instragram"  />
             </a>
 
             <a href="https://www.linkedin.com/company/grupo-intecsa/about/"
@@ -190,7 +191,7 @@ export default function Home() {
             rel="noopener follow"
             aria-label="Nuestra empresa en linkedin"
             >
-            <img src="/social/linkedin.svg" className="hidden" alt="Síguenos en Linkedin"  />
+            <Image width="100%" height="100%" src="/social/linkedin.svg" className="hidden" alt="Síguenos en Linkedin"  />
             </a>
 
             <a href="https://www.youtube.com/channel/UCLglnunszAKCtMYLaNDBpUw/featured"
@@ -198,7 +199,7 @@ export default function Home() {
             rel="noopener follow"
             aria-label="Cómo llegar"
             >
-            <img src="/social/youtube.svg" className="imgnav" alt="Síguenos en Youtube" />
+            <Image width="100%" height="100%" src="/social/youtube.svg" className="imgnav" alt="Síguenos en Youtube" />
             </a>
 
             <div className="visitanos">
