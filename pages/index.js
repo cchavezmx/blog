@@ -18,8 +18,6 @@ export default function Home () {
       .finally(() => setLoad(true))
   }, [])
 
-  console.log(imgUrl, load, '[la data]')
-
   return (
     <div lang="es_MX" className="styles">
 

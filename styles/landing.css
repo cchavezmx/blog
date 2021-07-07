@@ -157,7 +157,7 @@
 
 .socios-a{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   overflow-x: hidden;
   width: 100%;
@@ -166,11 +166,14 @@
 
 }
 
+.socios-a *{
+  margin: 10px;
+}
+
 .socios img{
   width: 8.75rem;
   height: 2.5rem;
   object-fit: contain;
-  margin: 0.6rem 0.7rem;
 
 }
 

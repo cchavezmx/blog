@@ -8,10 +8,8 @@ export default function relativeImages (req, res) {
     const relativeFolder = 'socios'
     const dir = path.resolve('./public', relativeFolder)
     const fileName = fs.readdirSync(dir)
-    // const images = fileName.map.map(name => path.join('/', relativeFolder, name))
-    const images = fileName.map(name => path.join('/', relativeFolder, name))
 
-    res.status(200).json({ message: images })
+    res.status(200).json({ message: fileName })
   } catch (error) {
     res.status(400).json({ error: error })
   }
