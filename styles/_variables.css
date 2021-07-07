@@ -1,0 +1,17 @@
+*:root{
+  --black-color: #34495e;
+  /* --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGeen: hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+  --grayishBlue: hsl(233, 8%, 62%);
+  --lightGrayish: hsl(220, 16%, 96%);
+  --veryLight: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --itaColor: #003769;
+  --blue: #2980b9;
+  --blue2: #3498db;
+  --btn-Ytranslate: translate(0, -10px);
+  
+}

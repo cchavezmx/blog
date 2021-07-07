@@ -1,0 +1,368 @@
+
+.title{
+  width: 100%;
+}
+
+.banner--empresa{
+  width: 100%;
+  margin-top: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem;
+}
+
+.banner--empresa button{
+  height: 3.125rem;
+  width: 12.5rem;
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 99px;
+  color: #ffffff;
+  background: linear-gradient(to right, var(--blue2), var(--blue));
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-weight: 400;
+  font-size: x-large;
+  transition: opacity 300ms ease-in-out;
+}
+
+.banner--empresa button:hover{
+  color: var(--darkBlue);
+  opacity: 0.75;
+}
+
+.banner--empresa p{
+  font-size: x-large;
+}
+
+.banner--empresa div {
+  margin: 20px;
+  flex-basis: 35%;
+}
+
+.marco--img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26.87rem;
+  border-radius: 0px 150px 0 150px;
+  background-image: url("../public/bg/sunset.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.marco--img img{
+  opacity: 1;
+  width: 170px;
+  height: 170px;
+  object-fit: scale-down;
+}
+
+.productos--estrella{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;  
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.productos--estrella--a{
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.productos--estrella--a div{
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.descripciones{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5rem; 
+  background-color: white;
+
+}
+
+.descripcion--item{
+  margin: 20px 0;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.descripcion--item div{
+  flex-basis: 400px;
+}
+
+.marcos{
+  height: 430px;
+  width: 400px;
+  border-radius: 0px 150px 0 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.marco--canaliza{
+  background-image: url("../public/empresas/canalizacion.jpeg");
+}
+
+.marco--tableros{
+  background-image: url("../public/empresas/tableros.JPG");
+
+}
+.marco--ingenieria{
+  background-image: url("../public/empresas/ingenieria.jpeg");
+}
+
+.descripcion--item span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 40%;
+  padding: 14px;
+}
+
+.socios{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.socios-a{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 5rem 0;
+
+}
+
+.socios img {
+  width: 140px;
+  height: fit-content;
+  object-fit: contain;
+  margin: 10px 40px;
+
+}
+
+.socios span{
+  padding: 10px;
+  margin: 0 40px;
+  width: 400px;
+  height: 100%;
+}
+
+.entradas--blog{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.blog--entries{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.blog--entries div img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog--entries div p{
+  text-align: left;
+}
+
+.blog--entries div{
+  border-radius: 8px;
+  background-color: #ffff;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  margin: 4px;
+  padding: 14px;
+}
+
+.blog--entries div:hover{
+  transform: translate(0, -10px);
+}
+
+.footer{
+  display: block;
+  padding: 1rem 0.6rem;
+  color: #ffff;
+  height: 100%;
+  background-color: #273c75;
+}
+
+.footer--cotainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer .redes{
+  flex-basis: 30% ;
+  transition: opacity 300ms ease-in-out;
+  
+}
+
+.footer .redes a{
+  margin: 0 10px;
+}
+
+.redes a:hover{
+  opacity: 0.75;
+  
+}
+
+.footer .address{
+  flex-basis: auto;
+  padding: 0 1rem;
+}
+
+.footer h2{ 
+  color: #ffff;
+  text-align: center;
+  border-bottom: 1px solid var(--black-color);
+
+}
+
+.footer h5{
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: large;
+  color: #7f8fa6;
+}
+
+.footer img{
+  width: 35px;
+  margin: 0 0px;
+
+}
+/* 
+.footer div {
+  height: 200px;
+} */
+
+
+.visitanos-small{
+  display: none;
+}
+
+
+
+
+/* media querys */
+@media (max-width: 60rem){
+
+  .banner--empresa{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .banner--empresa p{
+    font-size: large;
+  }
+  
+  .banner--empresa div {
+    margin: 15px 10px;
+    flex-basis: 300px;
+  }
+
+  .banner--empresa *{
+    width: 100%;
+  }
+
+  .productos--estrella{
+    height: 100%;
+  }
+
+  .productos--estrella--a{
+    flex-basis: 100%;
+    flex-direction: column;
+  }
+
+  .descripciones{
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .descripcion--item{
+    flex-direction: column; 
+  }
+
+  .descripcion--item div{
+    flex-basis: 400px;
+    width: 100%;
+  }
+
+  .reverse{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .socios{
+    padding: 10px;
+  }
+
+  .socios img {
+    width: 100px;
+    height: auto;
+    margin: 10px 10px;
+  
+  }
+
+  .blog--entries{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .visitanos{
+    display: none;
+  }
+
+  .visitanos-small{
+    display: block;
+    margin: 20px 0 0 0;
+    width: 100%;
+  }
+
+
+}

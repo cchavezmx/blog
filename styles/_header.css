@@ -1,0 +1,81 @@
+
+.navflex{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--lightGrayish);
+}
+
+.logo img{
+  padding: 0.625rem;
+  width: 80px;
+  height: 80px;
+  object-fit: scale-down;
+  
+}
+
+.hamburger{
+  display: none;
+}
+
+.hamburger span{
+  display: flex;
+  width: 26px;
+  height: 2px;
+  background-color: var(--darkBlue);  
+  margin-bottom: 3px;
+}
+
+.nav--links{
+  display: flex;
+  height: 30px; 
+}
+
+.nav--links a{
+  position: relative;
+  margin: 10px;
+  color: var(--grayishBlue);
+  font-weight: 600;
+}
+
+.nav--links a::before{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background: linear-gradient(to right, var(--blue), var(--blue2));
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.nav--links a:hover::before{
+  color: var(--black-color);
+  opacity: 1;
+  
+}
+
+@media (max-width: 64rem){
+
+  .navflex{
+    justify-content: space-between;
+  }
+
+  .hamburger{
+    display: block;
+  }
+  
+
+  .nav--links{
+    display: none;
+  }
+}
+
+

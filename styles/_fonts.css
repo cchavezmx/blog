@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../public/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Blod;
+  src: url("../public/fonts/Poppins-ExtraBold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Ita-font;
+  src: url("../public/fonts/texgyreadventor-bold-webfont.ttf");
+  font-weight: bold;
+}
