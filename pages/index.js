@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
+import a from 'next/link'
 import Image from 'next/image'
 
 const phone = '5215546371510'
-const whatsappMessage = `https://Linkpi.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
+const whatsappMessage = `https://api.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
 
 export default function Home () {
   const [imgUrl, setImgUrl] = useState([])
   const [load, setLoad] = useState(false)
 
   useEffect(() => {
-    fetch('/Linkpi/images')
+    fetch('/api/images')
       .then(res => res.json())
       .then(data => setImgUrl(data))
       .catch(err => console.log(err))
@@ -40,21 +40,21 @@ export default function Home () {
 
         <nav className="navflex">
           <span className="nav--logo">
-            <Link href="/">
+            <a href="/">
               <Image width="65" height="70" src="/logo/web-logo.webp" alt="logo grupo intecsa"/>
-            </Link>
+            </a>
           </span>
 
-          <button className="hamburger">
+          <div className="hamburger">
             <span></span>
             <span></span>
             <span></span>
-          </button>
+          </div>
 
           <div className="nav--links">
-            <Link href="/about">Nuestra Empresa</Link>
-            <Link href="www.itamx.com">Tienda</Link>
-            <Link href="/contacto">Contacto</Link>
+            <a href="/">Nuestra Empresa</a>
+            <a href="https://www.itamx.com" target="_blank" rel="noopener follow noreferrer" >Tienda</a>
+            <a href="/">Contacto</a>
           </div>
 
         </nav>
@@ -121,7 +121,7 @@ export default function Home () {
           <h2>Nuestros Socios Comerciales</h2>
       <section className="socios-a">
           { load && Object.values(imgUrl).map((img, index) => {
-            return img.map(item => <Image key={index} width="100%" height="100%" src={`/socios/${item}`} />)
+            return img.map(item => <Image key={index} width="100%" height="100%" src={`/socios/${item}`} alt="nuestros socios comerciales ica, carso, liverpool" />)
           })}
       </section>
       </section>
@@ -157,45 +157,45 @@ export default function Home () {
 
       <div className="footer--cotainer">
           <div className="redes">
-            {/* <button onClick={whatsappMessage}
+            <a href={whatsappMessage}
             target="_blank"
             rel="noopener follow noreferrer"
             aria-label="Mandanos un whatsapp"
             >
             <Image width="100%" height="100%" src="/social/whatsapp.svg" className="imgnav" alt="Síguenos en Facebook"/>
-            </button> */}
+            </a>
 
-            <Link href="https://www.facebook.com/Grupo-Intecsa-Mx-Oficial-213945636173987/"
+            <a href="https://www.facebook.com/Grupo-Intecsa-Mx-Oficial-213945636173987/"
             target="_blank"
             rel="noopener follow noreferrer"
             aria-label="Sígenos en facebook"
             >
             <Image width="100%" height="100%" src="/social/facebook.svg" className="imgnav" alt="Síguenos en Facebook"/>
-            </Link>
+            </a>
 
-            <Link href="https://www.instagram.com/grupointecsamx/?hl=es-la"
+            <a href="https://www.instagram.com/grupointecsamx/?hl=es-la"
             target="_blank"
             rel="noopener follow noreferrer"
             aria-label="Sígenos en instagram"
             >
             <Image width="100%" height="100%" src="/social/insta.svg" className="hidden" alt="Síguenos en Instragram" />
-            </Link>
+            </a>
 
-            <Link href="https://www.linkedin.com/company/grupo-intecsa/Linkbout/"
+            <a href="https://www.linkedin.com/company/grupo-intecsa/linkbout/"
             target="_blank"
             rel="noopener follow noreferrer"
             aria-label="Nuestra empresa en linkedin"
             >
-            <Image width="100%" height="100%" src="/social/linkedin.svg" className="hidden" alt="Síguenos en Linkedin" />
-            </Link>
+            <Image width="100%" height="100%" src="/social/linkedin.svg" className="hidden" alt="Síguenos" />
+            </a>
 
-            <Link href="https://www.youtube.com/channel/UCLglnunszAKCtMYLaNDBpUw/featured"
+            <a href="https://www.youtube.com/channel/UCLglnunszAKCtMYLaNDBpUw/featured"
             target="_blank"
             rel="noopener follow noreferrer"
             aria-label="Cómo llegar"
             >
             <Image width="100%" height="100%" src="/social/youtube.svg" className="imgnav" alt="Síguenos en Youtube" />
-            </Link>
+            </a>
 
             <div className="visitanos">
               <h5>Visitanos</h5>
@@ -207,7 +207,7 @@ export default function Home () {
           <div className="address">
             <span><h5>Dirección</h5><p>Raúl Zárate Machuca Cuevítas #11, 01220 Ciudad de México, CDMX</p></span>
             <span><h5>Nuestros horarios</h5><p>Lunes / Viernes 09:00 - 18:00</p></span>
-            <span><h5>Correo:</h5><Link href="mailto:contacto@grupointecsa.com" >contacto@grupointecsa.com</Link></span>
+            <span><h5>Correo:</h5><a href="mailto:contacto@grupointecsa.com" >contacto@grupointecsa.com</a></span>
 
           </div>
 
