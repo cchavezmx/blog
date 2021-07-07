@@ -13,10 +13,12 @@ export default function Home () {
   useEffect(() => {
     fetch('/api/images')
       .then(res => res.json())
-      .then(data => setImgUrl(data))
+      .then(data => setImgUrl(data.message))
       .catch(err => console.log(err))
       .finally(() => setLoad(true))
   }, [])
+
+  console.log(imgUrl, load, '[la data]')
 
   return (
     <div lang="es_MX" className="styles">
@@ -121,7 +123,7 @@ export default function Home () {
           <h2>Nuestros Socios Comerciales</h2>
       <section className="socios-a">
           { load && Object.values(imgUrl).map((img, index) => {
-            return img.map(item => <Image key={index} width="100%" height="100%" src={`/socios/${item}`} alt="nuestros socios comerciales ica, carso, liverpool" />)
+            return <Image key={index} width="100%" height="100%" src={`/socios/${img}`} alt="nuestros socios comerciales ica, carso, liverpool" />
           })}
       </section>
       </section>
