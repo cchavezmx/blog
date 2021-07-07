@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import a from 'next/link'
 import Image from 'next/image'
+import { getAllPosts } from './api/apiBlog'
 
 const phone = '5215546371510'
 const whatsappMessage = `https://api.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
 
-export default function Home () {
+export default function Home ({ allPosts }) {
   const [imgUrl, setImgUrl] = useState([])
   const [load, setLoad] = useState(false)
+
+  const morePost = allPosts
+  console.log(morePost, '[SOY CHISTOSO]')
 
   useEffect(() => {
     fetch('/api/images')
@@ -221,4 +224,19 @@ export default function Home () {
       </main>
     </div>
   )
+}
+
+export async function getStaticProps () {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt'
+  ])
+
+  return {
+    props: { allPosts }
+  }
 }
