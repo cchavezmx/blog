@@ -1,3 +1,8 @@
 module.exports = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  webpack: (config, options) => {
+    config.node = {
+      fs: 'empty'
+    }
+  }
 }
