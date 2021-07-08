@@ -196,32 +196,35 @@
 
 .blog--entries{
   display: flex;
-  flex-direction: row;
-  
+  flex-direction: row;  
 }
 
-.blog--entries div img{
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-}
-
-.blog--entries div p{
-  text-align: left;
-}
-
-.blog--entries div{
-  border-radius: 8px;
-  background-color: #ffff;
+.blog--card{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightGrayish);
   box-shadow: var(--shadow);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 10px;
+  width: 23rem;
+  min-height: 33rem;
   cursor: pointer;
-  margin: 4px;
-  padding: 14px;
+  transition: opacity 300ms ease-in-out;
 }
 
-.blog--entries div:hover{
+.blog--card:hover{
+  opacity: 0.75;
+  background-color: var(--veryLight);
   transform: translate(0, -10px);
 }
+
+.img--blog--card{
+  flex-basis: 50%;
+  background-color: aliceblue;
+}
+
+
 
 .footer{
   display: block;
@@ -355,6 +358,11 @@
   .blog--entries{
     display: flex;
     flex-direction: column;
+  }
+
+  .blog--card{
+    width: 100%;
+    margin: 0.16rem 0;
   }
 
   .visitanos{

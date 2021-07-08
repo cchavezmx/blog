@@ -10,8 +10,7 @@ export default function Home ({ allPosts }) {
   const [imgUrl, setImgUrl] = useState([])
   const [load, setLoad] = useState(false)
 
-  const morePost = allPosts
-  console.log(morePost, '[SOY CHISTOSO]')
+  const lastPosts = allPosts
 
   useEffect(() => {
     fetch('/api/images')
@@ -134,23 +133,20 @@ export default function Home ({ allPosts }) {
 
           <div className="blog--entries">
 
-          <div>
-            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
-            <h3>Titulo 1 blog</h3>
-            <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
-          </div>
-
-          <div>
-            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
-            <h3>Titulo 2 blog</h3>
-            <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
-          </div>
-
-          <div>
-            <Image width="100%" height="100%" src="/blog/foto_blog.jpg" />
-            <h3>Titulo 3 blog</h3>
-            <p>Ut sunt quis ipsum dolore ex proident ullamco laborum dolore sit laboris. Labore quis qui proident eu consequat minim aute enim amet nisi elit. Irure eiusmod tempor est fugiat cillum. Sit ad proident eiusmod pariatur aliquip est fugiat deserunt Lorem cupidatat exercitation amet esse ullamco. Occaecat ut cupidatat incididunt laborum amet.</p>
-          </div>
+          {
+            lastPosts.map(({ coverImage, title, excerpt, date }, index) => {
+              return (
+                  <div key={index} className="blog--card">
+                    <section className="img--blog--card">
+                      <Image layout="responsive" objectFit="cover" width="50%" height="50%" src={coverImage} alt="images de la entrada del blog"/>
+                    </section>
+                    <h3>{title}</h3>
+                    <p>{excerpt}</p>
+                    <small>{date}</small>
+                  </div>
+              )
+            })
+          }
 
           </div>
       </section>
