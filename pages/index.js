@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { getAllPosts } from './api/apiBlog'
@@ -7,18 +6,10 @@ const phone = '5215546371510'
 const whatsappMessage = `https://api.whatsapp.com/send/?phone=${phone}&text=Me gustaria tener información`
 
 export default function Home ({ allPosts }) {
-  const [imgUrl, setImgUrl] = useState([])
-  const [load, setLoad] = useState(false)
+  // const [imgUrl, setImgUrl] = useState([])
+  // const [load, setLoad] = useState(false)
 
   const lastPosts = allPosts
-
-  useEffect(() => {
-    fetch('/api/images')
-      .then(res => res.json())
-      .then(data => setImgUrl(data.message))
-      .catch(err => console.log(err))
-      .finally(() => setLoad(true))
-  }, [])
 
   return (
     <div lang="es_MX" className="styles">
@@ -55,7 +46,7 @@ export default function Home ({ allPosts }) {
 
           <div className="nav--links">
             <a href="/">Nuestra Empresa</a>
-            <a href="https://www.itamx.com" target="_blank" rel="noopener follow noreferrer" >Tienda</a>
+            <a href="https://www.itamx.com" target="_blank" rel="noopener follow noreferrer">Tienda</a>
             <a href="/">Contacto</a>
           </div>
 
@@ -65,7 +56,6 @@ export default function Home ({ allPosts }) {
           <div>
             <h1 className="title color-ita">Bienvenido</h1>
             <p>Somos una Empresa dedicada a la fabricación, comercialización y montaje de instalaciones eléctricas en industrias, comercios y edificios.</p>
-            <button>Contacto</button>
           </div>
 
           <div className="marco--img">
@@ -78,58 +68,79 @@ export default function Home ({ allPosts }) {
 
       <section className="productos--estrella">
         <div className="productos--estrella--a">
-            <div>
-                <h3 className="text-black">Certificaciones</h3>
-                <p>Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.</p>
+            <div className='flex flex-col border-hover'>
+                <h3 className="text-3xl mb-6">Certificaciones</h3>
+                <p className='w-[90%]'>
+                  Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.
+                </p>
             </div>
-            <div>
-            <h3 className="text-black">Curriculum</h3>
-                <p>Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.</p>
+            <div className='flex flex-col border-hover'>
+            <h3 className="text-3xl mb-6">Curriculum</h3>
+                <p className='w-[90%]'>
+                  Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.
+                </p>
             </div>
-            <div>
-                <h3 className="text-black">Catálogo Virtual</h3>
+            <div className='flex flex-col border-hover'>
+                <h3 className="text-3xl mb-6">Nuestros Catálogos</h3>
                 {/* <Image width={100} height={100} src="" /> */}
-                <p>Lorem tempor qui qui fugiat nisi ad minim. Elit magna elit aliquip irure. Cillum officia sit enim cupidatat est ea ad laboris minim do sit consequat.</p>
+                <p className='w-[90%]'>
+                  Descarga nuestros catálogos o revisa nuestros productos en una version en linea.
+                </p>
             </div>
           </div>
       </section>
 
       <section className="descripciones">
-        <h1 className="text-black">Nuestros Productos</h1>
+        <h1 className="text-black text-4xl mb-6 font-bold">Descarga nuestros catálogos</h1>
           <div className="descripcion--item">
-                <div className="marcos marco--tableros"></div>
+                <div className="marcos marco--tableros">
+                  <Image width="100%" height="100%" src="/bg/ABB_logo.svg" alt="logo de la empresa Grupo Intesca en un foto"/>
+                </div>
                 <div>
-                    <h2>Tableros</h2>
-                    <p>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
+                    <h2 className='text-3xl mb-4 mt-4 font-semibold'>ABB</h2>
+                    <p className='text-left'>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
                 </div>
           </div>
-          <div className="descripcion--item reverse">
-                <div>
-                    <h2>Canalizacion</h2>
-                    <p>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
+          <div className="descripcion--item">
+                <div className="marcos marco--canaliza">
+                  <Image width="100%" height="100%" src="/bg/git-big-wb.webp" alt="logo de la empresa Grupo Intesca en un foto"/>
                 </div>
-                <div className="marcos marco--canaliza"></div>
+                <div>
+                    <h2 className='text-3xl mb-4 mt-4 font-semibold'>Canalización y Soportería</h2>
+                    <p className='text-left'>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
+                </div>
           </div>
           <div className="descripcion--item">
-                <div className="marcos marco--ingenieria"></div>
+                <div className="marcos marco--ingenieria">
+                <Image width="100%" height="100%" src="/bg/git-big-wb.webp" alt="logo de la empresa Grupo Intesca en un foto"/>
+                </div>
                 <div>
-                    <h2>Ingeniería Eléctrica</h2>
-                    <p>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
+                    <h2 className='text-3xl mb-4 mt-4 font-semibold'>Intecsa</h2>
+                    <p className='text-left'>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
+                </div>
+          </div>
+          <div className="descripcion--item">
+                <div className="marcos marco--ingenieria">
+                <Image width="100%" height="100%" src="/bg/git-big-wb.webp" alt="logo de la empresa Grupo Intesca en un foto"/>
+                </div>
+                <div>
+                    <h2 className='text-3xl mb-4 mt-4 font-semibold'>Onka</h2>
+                    <p className='text-left'>Velit sit sint anim deserunt enim ipsum ut officia tempor amet laboris nostrud voluptate. Dolore irure amet do ea reprehenderit Lorem sunt cupidatat Lorem anim non nostrud aute. Aliqua et anim occaecat ex aliquip minim eu amet nulla anim excepteur in fugiat reprehenderit. Lorem ullamco qui irure eu ipsum aute ea magna tempor occaecat. Deserunt ullamco elit in eiusmod occaecat sit. Irure occaecat incididunt fugiat veniam mollit proident dolore. Aliqua non ad laboris veniam sunt id amet ex culpa adipisicing fugiat minim mollit nulla.</p>
                 </div>
           </div>
       </section>
 
-      <section className="socios">
+      {/* <section className="socios">
           <h2>Nuestros Socios Comerciales</h2>
       <section className="socios-a">
           { load && Object.values(imgUrl).map((img, index) => {
             return <Image key={index} width="100%" height="100%" src={`/socios/${img}`} alt="nuestros socios comerciales ica, carso, liverpool" />
           })}
       </section>
-      </section>
+      </section> */}
 
-      <section className="entradas--blog">
-        <h2>Ultimos temas del Blog</h2>
+      <section className="entradas--blog mt-5">
+        <h2 className='text-3xl'>Últimos temas del Blog</h2>
 
           <div className="blog--entries">
 
